@@ -4,6 +4,12 @@ import { HeroSection } from '@/components/hero-section';
 import { RoomShowcase } from '@/components/room-showcase';
 import { BookingForm } from '@/components/booking-form';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { AboutUs } from '@/components/about-us';
+import { RestaurantFacilities } from '@/components/restaurant-facilities';
+import { NearbyAttractions } from '@/components/nearby-attractions';
+import { ActivitiesHiking } from '@/components/activities-hiking';
+import { PhotoGallery } from '@/components/photo-gallery';
+import { HouseRules } from '@/components/house-rules';
 
 export default function Home() {
   return (
@@ -12,9 +18,14 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <RoomShowcase />
+        <AboutUs />
+        <RestaurantFacilities />
+        <NearbyAttractions />
+        <ActivitiesHiking />
+        <PhotoGallery />
+        <HouseRules />
         <BookingForm />
         <TestimonialCarousel />
-        {/* Add other sections like Gallery, About, Contact in the future */}
       </main>
       <Footer />
     </div>

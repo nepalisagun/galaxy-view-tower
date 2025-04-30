@@ -36,26 +36,29 @@ export function Header() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Discover Nagarkot</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                 <Sunrise className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target */}
-                <span>Sunrise & Sunset Views</span>
+              <DropdownMenuItem asChild>
+                 <Link href="#hero"> {/* Scroll to top/hero for views */}
+                   <Sunrise className="mr-2 h-4 w-4" />
+                   <span>Sunrise & Sunset Views</span>
+                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                 <MapPin className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                <span>Nearby Attractions</span>
-                 {/* <span className="text-xs text-muted-foreground ml-auto">(e.g., Bhaktapur)</span> */}
+              <DropdownMenuItem asChild>
+                 <Link href="#nearby-attractions">
+                    <MapPin className="mr-2 h-4 w-4" />
+                    <span>Nearby Attractions</span>
+                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                 <Bike className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                <span>Activities & Hiking</span>
+              <DropdownMenuItem asChild>
+                 <Link href="#activities-hiking">
+                    <Bike className="mr-2 h-4 w-4" />
+                    <span>Activities & Hiking</span>
+                 </Link>
               </DropdownMenuItem>
-               <DropdownMenuItem>
-                 <Camera className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                <span>Photo Gallery</span>
+               <DropdownMenuItem asChild>
+                 <Link href="#gallery">
+                    <Camera className="mr-2 h-4 w-4" />
+                    <span>Photo Gallery</span>
+                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -70,29 +73,32 @@ export function Header() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Hotel Information</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                 <Building className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                 <span>About Us</span>
+              <DropdownMenuItem asChild>
+                 <Link href="#about-us">
+                    <Building className="mr-2 h-4 w-4" />
+                    <span>About Us</span>
+                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                 <Utensils className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                <span>Restaurant & Facilities</span>
-                 {/* <span className="text-xs text-muted-foreground ml-auto">(e.g., Rooftop)</span> */}
+              <DropdownMenuItem asChild>
+                 <Link href="#restaurant-facilities">
+                    <Utensils className="mr-2 h-4 w-4" />
+                    <span>Restaurant & Facilities</span>
+                 </Link>
               </DropdownMenuItem>
-               <DropdownMenuItem>
-                 <ParkingCircle className="mr-2 h-4 w-4" />
-                <span>Free Parking</span>
+              {/* Free Parking/Wifi mentioned in Facilities section */}
+               <DropdownMenuItem disabled>
+                 <ParkingCircle className="mr-2 h-4 w-4 text-muted-foreground" />
+                 <span className="text-muted-foreground">Free Parking</span>
               </DropdownMenuItem>
-               <DropdownMenuItem>
-                 <Wifi className="mr-2 h-4 w-4" />
-                <span>Free Wi-Fi</span>
+               <DropdownMenuItem disabled>
+                 <Wifi className="mr-2 h-4 w-4 text-muted-foreground" />
+                 <span className="text-muted-foreground">Free Wi-Fi</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <BookOpen className="mr-2 h-4 w-4" />
-                 {/* TODO: Add link/scroll target or page */}
-                <span>House Rules & Policies</span>
+              <DropdownMenuItem asChild>
+                 <Link href="#house-rules">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    <span>House Rules & Policies</span>
+                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -108,22 +114,22 @@ export function Header() {
               <DropdownMenuLabel>Get in Touch</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
-                 {/* TODO: Add correct phone number */}
-                 <a href="tel:+977-XXXXXXXXXX">
+                 {/* TODO: Replace with actual phone number */}
+                 <a href="tel:+9771234567890">
                     <Phone className="mr-2 h-4 w-4" />
-                    <span>Call Us</span>
+                    <span>Call Us (+977-1234567890)</span>
                  </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                 {/* TODO: Add correct email address */}
+                 {/* TODO: Replace with actual email address */}
                  <a href="mailto:info@galaxyviewtower.com">
                     <Mail className="mr-2 h-4 w-4" />
                     <span>Email Us</span>
                  </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                 {/* TODO: Add correct Google Maps link */}
-                 <a href="https://maps.google.com/?q=Galaxy+View+Tower+Nagarkot" target="_blank" rel="noopener noreferrer">
+                 {/* TODO: Replace with correct Google Maps link if different */}
+                 <a href="https://maps.app.goo.gl/o5f48dZJqVd3J9Qd9" target="_blank" rel="noopener noreferrer">
                      <Landmark className="mr-2 h-4 w-4" />
                      <span>Find Us on Map</span>
                  </a>
