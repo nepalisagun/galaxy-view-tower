@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Mountain, MapPin, Bike, Info, Utensils, Wifi, ParkingCircle, BookOpen, ChevronDown, Image as ImageIcon, Phone, Mail } from 'lucide-react'; // Replaced Hiking with Bike, added Image, Phone, Mail
+import { Mountain, MapPin, Bike, Info, Utensils, Wifi, ParkingCircle, BookOpen, ChevronDown, Image as ImageIcon, Phone, Mail, Sunrise, Camera, Building, Landmark } from 'lucide-react'; // Added relevant icons
 
 export function Header() {
   return (
@@ -20,7 +20,8 @@ export function Header() {
             Galaxy View Tower
           </span>
         </Link>
-        <nav className="hidden flex-1 items-center space-x-1 md:flex sm:justify-end"> {/* Hide nav on small screens for now */}
+        {/* Desktop Navigation */}
+        <nav className="hidden flex-1 items-center space-x-1 md:flex sm:justify-end">
           <Link href="#rooms">
              <Button variant="ghost">Rooms</Button>
           </Link>
@@ -35,21 +36,26 @@ export function Header() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Discover Nagarkot</DropdownMenuLabel>
               <DropdownMenuSeparator />
-               {/* TODO: Add actual links/scroll targets when sections/pages are created */}
+              <DropdownMenuItem>
+                 <Sunrise className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target */}
+                <span>Sunrise & Sunset Views</span>
+              </DropdownMenuItem>
               <DropdownMenuItem>
                  <MapPin className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target or page */}
                 <span>Nearby Attractions</span>
-                {/* Example: <Link href="/attractions">Nearby Attractions</Link> */}
+                 {/* <span className="text-xs text-muted-foreground ml-auto">(e.g., Bhaktapur)</span> */}
               </DropdownMenuItem>
               <DropdownMenuItem>
                  <Bike className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target or page */}
                 <span>Activities & Hiking</span>
-                 {/* Example: <Link href="/activities">Activities & Hiking</Link> */}
               </DropdownMenuItem>
                <DropdownMenuItem>
-                 <ImageIcon className="mr-2 h-4 w-4" />
+                 <Camera className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target or page */}
                 <span>Photo Gallery</span>
-                {/* Example: <Link href="/gallery">Photo Gallery</Link> */}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -65,27 +71,28 @@ export function Header() {
               <DropdownMenuLabel>Hotel Information</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                 <Info className="mr-2 h-4 w-4" />
+                 <Building className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target or page */}
                  <span>About Us</span>
-                 {/* Example: <Link href="/about">About Us</Link> */}
               </DropdownMenuItem>
               <DropdownMenuItem>
                  <Utensils className="mr-2 h-4 w-4" />
+                 {/* TODO: Add link/scroll target or page */}
                 <span>Restaurant & Facilities</span>
-                {/* Example: <Link href="/facilities">Restaurant & Facilities</Link> */}
+                 {/* <span className="text-xs text-muted-foreground ml-auto">(e.g., Rooftop)</span> */}
               </DropdownMenuItem>
                <DropdownMenuItem>
                  <ParkingCircle className="mr-2 h-4 w-4" />
-                <span>Parking</span>
+                <span>Free Parking</span>
               </DropdownMenuItem>
                <DropdownMenuItem>
                  <Wifi className="mr-2 h-4 w-4" />
-                <span>Wi-Fi Details</span>
+                <span>Free Wi-Fi</span>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <BookOpen className="mr-2 h-4 w-4" />
-                <span>House Rules</span>
-                {/* Example: <Link href="/rules">House Rules</Link> */}
+                 {/* TODO: Add link/scroll target or page */}
+                <span>House Rules & Policies</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -100,24 +107,29 @@ export function Header() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Get in Touch</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                 <Phone className="mr-2 h-4 w-4" />
-                <span>Call Us</span>
-                {/* TODO: Add Tel Link e.g., <a href="tel:+977..."> */}
+              <DropdownMenuItem asChild>
+                 {/* TODO: Add correct phone number */}
+                 <a href="tel:+977-XXXXXXXXXX">
+                    <Phone className="mr-2 h-4 w-4" />
+                    <span>Call Us</span>
+                 </a>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                 <Mail className="mr-2 h-4 w-4" />
-                <span>Email Us</span>
-                 {/* TODO: Add Mailto Link e.g., <a href="mailto:..."> */}
+              <DropdownMenuItem asChild>
+                 {/* TODO: Add correct email address */}
+                 <a href="mailto:info@galaxyviewtower.com">
+                    <Mail className="mr-2 h-4 w-4" />
+                    <span>Email Us</span>
+                 </a>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                 <MapPin className="mr-2 h-4 w-4" />
-                 <span>Find Us</span>
-                 {/* TODO: Add Google Maps Link */}
+              <DropdownMenuItem asChild>
+                 {/* TODO: Add correct Google Maps link */}
+                 <a href="https://maps.google.com/?q=Galaxy+View+Tower+Nagarkot" target="_blank" rel="noopener noreferrer">
+                     <Landmark className="mr-2 h-4 w-4" />
+                     <span>Find Us on Map</span>
+                 </a>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
 
           <Link href="#testimonials">
              <Button variant="ghost">Reviews</Button>
@@ -128,11 +140,11 @@ export function Header() {
           </Link>
 
         </nav>
-         {/* TODO: Add Mobile Menu (Sheet component?) for smaller screens */}
+         {/* Mobile Menu Trigger - Placeholder */}
           <div className="ml-auto flex items-center md:hidden">
-              {/* Placeholder for mobile menu trigger */}
+              {/* TODO: Implement Mobile Menu (e.g., using Sheet component) */}
               <Button variant="ghost" size="icon">
-                 {/* <Menu className="h-6 w-6" /> */}
+                 <Mountain className="h-6 w-6" /> {/* Use a menu icon later */}
                  <span className="sr-only">Open Menu</span>
               </Button>
           </div>
