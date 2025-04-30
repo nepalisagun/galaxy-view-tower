@@ -3,78 +3,157 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    /* Earthy Green */
+    --primary-h: 145;
+    --primary-s: 30%;
+    --primary-l: 30%;
+    /* Terracotta */
+    --accent-h: 13;
+    --accent-s: 71%;
+    --accent-l: 62%;
+    /* Light Grey */
+    --background-h: 150;
+    --background-s: 14%;
+    --background-l: 95%;
+    /* Dark Text */
+    --foreground-h: 0;
+    --foreground-s: 0%;
+    --foreground-l: 3.9%;
+    /* Warm Beige */
+    --secondary-h: 44;
+    --secondary-s: 47%;
+    --secondary-l: 80%;
+    /* White for Primary FG */
+    --primary-foreground-h: 0;
+    --primary-foreground-s: 0%;
+    --primary-foreground-l: 98%;
+
+    --background: var(--background-h) var(--background-s) var(--background-l);
+    --foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --card: var(--background-h) var(--background-s) var(--background-l);
+    --card-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --popover: var(--background-h) var(--background-s) var(--background-l);
+    --popover-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --primary: var(--primary-h) var(--primary-s) var(--primary-l);
+    --primary-foreground: var(--primary-foreground-h) var(--primary-foreground-s) var(--primary-foreground-l);
+
+    --secondary: var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    --secondary-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l); /* Dark text on beige */
+
+    --muted: 210 40% 96.1%; /* Default Muted */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Default Muted Foreground */
+
+    --accent: var(--accent-h) var(--accent-s) var(--accent-l);
+    --accent-foreground: var(--primary-foreground-h) var(--primary-foreground-s) var(--primary-foreground-l); /* White text on terracotta */
+
+    --destructive: 0 84.2% 60.2%; /* Default Destructive */
+    --destructive-foreground: 0 0% 98%; /* Default Destructive Foreground */
+
+    --border: 214.3 31.8% 91.4%; /* Default Border */
+    --input: 214.3 31.8% 91.4%; /* Default Input */
+    --ring: var(--primary-h) var(--primary-s) var(--primary-l); /* Use primary for ring */
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Sidebar specific (can keep default or adjust if needed) */
+    --sidebar-background: var(--background-h) var(--background-s) var(--background-l);
+    --sidebar-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+    --sidebar-primary: var(--primary-h) var(--primary-s) var(--primary-l);
+    --sidebar-primary-foreground: var(--primary-foreground-h) var(--primary-foreground-s) var(--primary-foreground-l);
+    --sidebar-accent: var(--secondary-h) var(--secondary-s) var(--secondary-l); /* Use secondary for sidebar accent */
+    --sidebar-accent-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    /* Define dark theme colors if needed, otherwise default Shadcn dark theme will apply */
+    /* Example: Invert or use darker shades */
+    --primary-h: 145;
+    --primary-s: 30%;
+    --primary-l: 70%; /* Lighter green for dark mode */
+
+    --accent-h: 13;
+    --accent-s: 71%;
+    --accent-l: 72%; /* Lighter terracotta */
+
+    --background-h: 20;
+    --background-s: 14.3%;
+    --background-l: 4.1%; /* Dark background */
+
+    --foreground-h: 0;
+    --foreground-s: 0%;
+    --foreground-l: 95%; /* Light foreground */
+
+    --secondary-h: 44;
+    --secondary-s: 20%;
+    --secondary-l: 20%; /* Darker beige */
+
+    --primary-foreground-h: 0;
+    --primary-foreground-s: 0%;
+    --primary-foreground-l: 5%; /* Dark text on light green */
+
+    --accent-foreground-h: 0;
+    --accent-foreground-s: 0%;
+    --accent-foreground-l: 5%; /* Dark text on light terracotta */
+
+    --background: var(--background-h) var(--background-s) var(--background-l);
+    --foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --card: var(--background-h) var(--background-s) var(--background-l);
+    --card-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --popover: var(--background-h) var(--background-s) var(--background-l);
+    --popover-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --primary: var(--primary-h) var(--primary-s) var(--primary-l);
+    --primary-foreground: var(--primary-foreground-h) var(--primary-foreground-s) var(--primary-foreground-l);
+
+    --secondary: var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    --secondary-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+
+    --muted: 215 20.2% 65.1%; /* Default Dark Muted */
+    --muted-foreground: 217.2 32.6% 17.5%; /* Default Dark Muted Foreground */
+
+    --accent: var(--accent-h) var(--accent-s) var(--accent-l);
+    --accent-foreground: var(--accent-foreground-h) var(--accent-foreground-s) var(--accent-foreground-l);
+
+    --destructive: 0 62.8% 30.6%; /* Default Dark Destructive */
+    --destructive-foreground: 0 85.7% 97.3%; /* Default Dark Destructive Foreground */
+
+    --border: 217.2 32.6% 17.5%; /* Default Dark Border */
+    --input: 217.2 32.6% 17.5%; /* Default Dark Input */
+    --ring: var(--primary-h) var(--primary-s) var(--primary-l);
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Sidebar specific for dark mode */
+    --sidebar-background: var(--background-h) var(--background-s) var(--background-l);
+    --sidebar-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+    --sidebar-primary: var(--primary-h) var(--primary-s) var(--primary-l);
+    --sidebar-primary-foreground: var(--primary-foreground-h) var(--primary-foreground-s) var(--primary-foreground-l);
+    --sidebar-accent: var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    --sidebar-accent-foreground: var(--foreground-h) var(--foreground-s) var(--foreground-l);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
   }
 }
 
@@ -84,5 +163,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
